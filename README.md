@@ -72,46 +72,7 @@ The system then:
 # 🏗 System Architecture
 
 ```
-                        User
-                          │
-        Upload Image + Description
-                          │
-                          ▼
-                 Security Agent
-                          │
-          Validate & Sanitize Request
-                          │
-                          ▼
-                 Planner Agent
-                          │
-       Creates Execution Workflow Plan
-                          │
-        ┌─────────────┬─────────────┬─────────────┐
-        ▼             ▼             ▼
- Vision Worker   Repair Worker   Pricing Worker
-        │             │             │
-        ▼             ▼             ▼
- OCR Tool      Repair Tool    Pricing Tool
-        │             │             │
-        └─────────────┴─────────────┘
-                      │
-                      ▼
-          Market Intelligence Agent
-                      │
-                      ▼
-      Investment Recommendation Agent
-                      │
-                      ▼
-              Evaluator Agent
-                      │
-      Validate Business Opportunity
-                      │
-                      ▼
-         Memory + Observability Logs
-                      │
-                      ▼
-              Gradio Dashboard UI
-```
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/36957e3e-9772-4a92-9ba7-acf30bd702cc" />
 
 ---
 
