@@ -72,8 +72,9 @@ The system then:
 # 🏗 System Architecture
 
 ```
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/36957e3e-9772-4a92-9ba7-acf30bd702cc" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5d46f92c-5192-4c3e-a357-819eba94b9bb" />
 
+```
 ---
 
 # 🤖 Multi-Agent Architecture
