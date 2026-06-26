@@ -1,0 +1,717 @@
+[
+  {
+    "session_id": "session_seed00",
+    "timestamp": "2026-06-24T02:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "iphone 13",
+      "target_condition": "Excellent",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPhone 13",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Super Retina XDR OLED",
+          "processor": "Apple A15 Bionic",
+          "storage_options": [
+            "128GB",
+            "256GB"
+          ],
+          "battery": "3240 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Perform screen replacement",
+            "cost": 150.0
+          }
+        ],
+        "total_repair_cost": 150.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "target_condition": "Excellent",
+        "market_resale_value": 450.0,
+        "estimated_acquisition_cost": 157.5,
+        "repair_cost": 150.0,
+        "total_investment": 307.5,
+        "net_profit": 142.5,
+        "profit_margin_percentage": 31.7,
+        "roi_percentage": 46.3,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.15,
+        "reasoning": "Excellent investment opportunity with high profit margin and low risk."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed00_report.md",
+      "ebay_listing": "# Professional Refurbished Apple iphone 13\n- Resale Condition: Excellent\n- Tested: Fully Functional.\n- Repairs completed: Perform screen replacement.",
+      "report_markdown": "# Refurbishment Report for iphone 13"
+    }
+  },
+  {
+    "session_id": "session_seed01",
+    "timestamp": "2026-06-23T09:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "iphone 13",
+      "target_condition": "Good",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPhone 13",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Super Retina XDR OLED",
+          "processor": "Apple A15 Bionic",
+          "storage_options": [
+            "128GB",
+            "256GB"
+          ],
+          "battery": "3240 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "repairs": [
+          {
+            "issue": "battery_replacement",
+            "action": "Replace lithium battery",
+            "cost": 60.0
+          }
+        ],
+        "total_repair_cost": 60.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "target_condition": "Good",
+        "market_resale_value": 380.0,
+        "estimated_acquisition_cost": 133.0,
+        "repair_cost": 60.0,
+        "total_investment": 193.0,
+        "net_profit": 187.0,
+        "profit_margin_percentage": 49.2,
+        "roi_percentage": 96.9,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.05,
+        "reasoning": "High profit margin with minimal repair cost."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed01_report.md",
+      "ebay_listing": "# Professional Refurbished Apple iphone 13\n- Resale Condition: Good\n- Tested: Fully Functional.\n- Repairs completed: Replace lithium battery.",
+      "report_markdown": "# Refurbishment Report for iphone 13"
+    }
+  },
+  {
+    "session_id": "session_seed02",
+    "timestamp": "2026-06-22T01:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "iphone 14",
+      "target_condition": "Excellent",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPhone 14",
+        "release_year": 2022,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Super Retina XDR OLED",
+          "processor": "Apple A15 Bionic",
+          "storage_options": [
+            "128GB",
+            "256GB",
+            "512GB"
+          ],
+          "battery": "3279 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "iphone 14",
+        "matched_model_key": "iphone 14",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Perform screen replacement",
+            "cost": 180.0
+          },
+          {
+            "issue": "back_glass_replacement",
+            "action": "Replace back glass panel",
+            "cost": 130.0
+          }
+        ],
+        "total_repair_cost": 310.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "iphone 14",
+        "matched_model_key": "iphone 14",
+        "target_condition": "Excellent",
+        "market_resale_value": 550.0,
+        "estimated_acquisition_cost": 192.5,
+        "repair_cost": 310.0,
+        "total_investment": 502.5,
+        "net_profit": 47.5,
+        "profit_margin_percentage": 8.6,
+        "roi_percentage": 9.5,
+        "currency": "USD"
+      },
+      "validation_score": 0.8,
+      "investment_recommendation": {
+        "recommendation": "SELL AS-IS",
+        "risk_score": 0.55,
+        "reasoning": "Marginal profitability with high repair costs relative to value. Sell without refurbishment."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed02_report.md",
+      "ebay_listing": "# Professional Refurbished Apple iphone 14\n- Resale Condition: Excellent\n- Tested: Fully Functional.\n- Repairs completed: Perform screen replacement.",
+      "report_markdown": "# Refurbishment Report for iphone 14"
+    }
+  },
+  {
+    "session_id": "session_seed03",
+    "timestamp": "2026-06-21T16:50:39.377846Z",
+    "device": {
+      "brand": "Samsung",
+      "model": "galaxy s22",
+      "target_condition": "Fair",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Samsung",
+        "model": "Galaxy S22",
+        "release_year": 2022,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Dynamic AMOLED 2X",
+          "processor": "Snapdragon 8 Gen 1",
+          "storage_options": [
+            "128GB",
+            "256GB"
+          ],
+          "battery": "3700 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "repairs": [
+          {
+            "issue": "logic_board_repair",
+            "action": "Repair micro-solder connections",
+            "cost": 180.0
+          }
+        ],
+        "total_repair_cost": 180.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "target_condition": "Fair",
+        "market_resale_value": 220.0,
+        "estimated_acquisition_cost": 77.0,
+        "repair_cost": 180.0,
+        "total_investment": 257.0,
+        "net_profit": -37.0,
+        "profit_margin_percentage": -16.8,
+        "roi_percentage": -14.4,
+        "currency": "USD"
+      },
+      "validation_score": 0.8,
+      "investment_recommendation": {
+        "recommendation": "REJECT",
+        "risk_score": 0.85,
+        "reasoning": "Negative ROI projected. Not financially viable for refurbishment investment."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed03_report.md",
+      "ebay_listing": "# Professional Refurbished Samsung galaxy s22\n- Resale Condition: Fair\n- Tested: Fully Functional.\n- Repairs completed: Repair micro-solder connections.",
+      "report_markdown": "# Refurbishment Report for galaxy s22"
+    }
+  },
+  {
+    "session_id": "session_seed04",
+    "timestamp": "2026-06-19T21:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "macbook pro m1 2020",
+      "target_condition": "Excellent",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "MacBook Pro M1 2020",
+        "release_year": 2020,
+        "specs": {
+          "screen_size": "13.3 inches",
+          "display": "Retina Display",
+          "processor": "Apple M1",
+          "storage_options": [
+            "256GB",
+            "512GB",
+            "1TB"
+          ],
+          "battery": "58.2 Wh"
+        }
+      },
+      "refurbishment": {
+        "device": "macbook pro m1 2020",
+        "matched_model_key": "macbook pro m1 2020",
+        "repairs": [
+          {
+            "issue": "keyboard_replacement",
+            "action": "Replace scissor-switch keyboard assembly",
+            "cost": 150.0
+          }
+        ],
+        "total_repair_cost": 150.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "macbook pro m1 2020",
+        "matched_model_key": "macbook pro m1 2020",
+        "target_condition": "Excellent",
+        "market_resale_value": 750.0,
+        "estimated_acquisition_cost": 262.5,
+        "repair_cost": 150.0,
+        "total_investment": 412.5,
+        "net_profit": 337.5,
+        "profit_margin_percentage": 45.0,
+        "roi_percentage": 81.8,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.1,
+        "reasoning": "Strong resale market with a healthy profit margin."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed04_report.md",
+      "ebay_listing": "# Professional Refurbished Apple macbook pro m1 2020\n- Resale Condition: Excellent\n- Tested: Fully Functional.\n- Repairs completed: Replace scissor-switch keyboard assembly.",
+      "report_markdown": "# Refurbishment Report for macbook pro m1 2020"
+    }
+  },
+  {
+    "session_id": "session_seed05",
+    "timestamp": "2026-06-18T21:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "macbook pro m1 2020",
+      "target_condition": "Good",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "MacBook Pro M1 2020",
+        "release_year": 2020,
+        "specs": {
+          "screen_size": "13.3 inches",
+          "display": "Retina Display",
+          "processor": "Apple M1",
+          "storage_options": [
+            "256GB",
+            "512GB",
+            "1TB"
+          ],
+          "battery": "58.2 Wh"
+        }
+      },
+      "refurbishment": {
+        "device": "macbook pro m1 2020",
+        "matched_model_key": "macbook pro m1 2020",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Replace Retina display panel",
+            "cost": 350.0
+          }
+        ],
+        "total_repair_cost": 350.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "macbook pro m1 2020",
+        "matched_model_key": "macbook pro m1 2020",
+        "target_condition": "Good",
+        "market_resale_value": 630.0,
+        "estimated_acquisition_cost": 220.5,
+        "repair_cost": 350.0,
+        "total_investment": 570.5,
+        "net_profit": 59.5,
+        "profit_margin_percentage": 9.4,
+        "roi_percentage": 10.4,
+        "currency": "USD"
+      },
+      "validation_score": 0.8,
+      "investment_recommendation": {
+        "recommendation": "SELL AS-IS",
+        "risk_score": 0.5,
+        "reasoning": "High screen repair cost eats into profit margin. Better to sell in current state."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed05_report.md",
+      "ebay_listing": "# Professional Refurbished Apple macbook pro m1 2020\n- Resale Condition: Good\n- Tested: Fully Functional.\n- Repairs completed: Replace Retina display panel.",
+      "report_markdown": "# Refurbishment Report for macbook pro m1 2020"
+    }
+  },
+  {
+    "session_id": "session_seed06",
+    "timestamp": "2026-06-18T14:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "ipad pro 11 2021",
+      "target_condition": "Excellent",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPad Pro 11 2021",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "11 inches",
+          "display": "Liquid Retina",
+          "processor": "Apple M1",
+          "storage_options": [
+            "128GB",
+            "256GB",
+            "512GB"
+          ],
+          "battery": "7538 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "ipad pro 11 2021",
+        "matched_model_key": "ipad pro 11 2021",
+        "repairs": [
+          {
+            "issue": "charging_port_repair",
+            "action": "Repair USB-C charging port",
+            "cost": 70.0
+          }
+        ],
+        "total_repair_cost": 70.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "ipad pro 11 2021",
+        "matched_model_key": "ipad pro 11 2021",
+        "target_condition": "Excellent",
+        "market_resale_value": 500.0,
+        "estimated_acquisition_cost": 175.0,
+        "repair_cost": 70.0,
+        "total_investment": 245.0,
+        "net_profit": 255.0,
+        "profit_margin_percentage": 51.0,
+        "roi_percentage": 104.1,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.05,
+        "reasoning": "Outstanding profitability with minimal investment."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed06_report.md",
+      "ebay_listing": "# Professional Refurbished Apple ipad pro 11 2021\n- Resale Condition: Excellent\n- Tested: Fully Functional.\n- Repairs completed: Repair USB-C charging port.",
+      "report_markdown": "# Refurbishment Report for ipad pro 11 2021"
+    }
+  },
+  {
+    "session_id": "session_seed07",
+    "timestamp": "2026-06-17T10:50:39.377846Z",
+    "device": {
+      "brand": "Apple",
+      "model": "ipad pro 11 2021",
+      "target_condition": "Good",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPad Pro 11 2021",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "11 inches",
+          "display": "Liquid Retina",
+          "processor": "Apple M1",
+          "storage_options": [
+            "128GB",
+            "256GB",
+            "512GB"
+          ],
+          "battery": "7538 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "ipad pro 11 2021",
+        "matched_model_key": "ipad pro 11 2021",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Replace Liquid Retina screen assembly",
+            "cost": 220.0
+          }
+        ],
+        "total_repair_cost": 220.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "ipad pro 11 2021",
+        "matched_model_key": "ipad pro 11 2021",
+        "target_condition": "Good",
+        "market_resale_value": 420.0,
+        "estimated_acquisition_cost": 147.0,
+        "repair_cost": 220.0,
+        "total_investment": 367.0,
+        "net_profit": 53.0,
+        "profit_margin_percentage": 12.6,
+        "roi_percentage": 14.4,
+        "currency": "USD"
+      },
+      "validation_score": 0.95,
+      "investment_recommendation": {
+        "recommendation": "REFURBISH",
+        "risk_score": 0.35,
+        "reasoning": "Moderate return, screen replacement is standard refurbishment process."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed07_report.md",
+      "ebay_listing": "# Professional Refurbished Apple ipad pro 11 2021\n- Resale Condition: Good\n- Tested: Fully Functional.\n- Repairs completed: Replace Liquid Retina screen assembly.",
+      "report_markdown": "# Refurbishment Report for ipad pro 11 2021"
+    }
+  },
+  {
+    "session_id": "session_seed08",
+    "timestamp": "2026-06-16T13:50:39.377846Z",
+    "device": {
+      "brand": "Samsung",
+      "model": "galaxy s22",
+      "target_condition": "Excellent",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Samsung",
+        "model": "Galaxy S22",
+        "release_year": 2022,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Dynamic AMOLED 2X",
+          "processor": "Snapdragon 8 Gen 1",
+          "storage_options": [
+            "128GB",
+            "256GB"
+          ],
+          "battery": "3700 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "repairs": [
+          {
+            "issue": "battery_replacement",
+            "action": "Replace rechargeable battery pack",
+            "cost": 55.0
+          }
+        ],
+        "total_repair_cost": 55.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "target_condition": "Excellent",
+        "market_resale_value": 350.0,
+        "estimated_acquisition_cost": 122.5,
+        "repair_cost": 55.0,
+        "total_investment": 177.5,
+        "net_profit": 172.5,
+        "profit_margin_percentage": 49.3,
+        "roi_percentage": 97.2,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.05,
+        "reasoning": "Sleek device with minimal repair required. Strong resell margin."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed08_report.md",
+      "ebay_listing": "# Professional Refurbished Samsung galaxy s22\n- Resale Condition: Excellent\n- Tested: Fully Functional.\n- Repairs completed: Replace rechargeable battery pack.",
+      "report_markdown": "# Refurbishment Report for galaxy s22"
+    }
+  },
+  {
+    "session_id": "session_seed09",
+    "timestamp": "2026-06-15T12:50:39.377846Z",
+    "device": {
+      "brand": "Samsung",
+      "model": "galaxy s22",
+      "target_condition": "Good",
+      "image_path": ""
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Samsung",
+        "model": "Galaxy S22",
+        "release_year": 2022,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Dynamic AMOLED 2X",
+          "processor": "Snapdragon 8 Gen 1",
+          "storage_options": [
+            "128GB",
+            "256GB"
+          ],
+          "battery": "3700 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "repairs": [
+          {
+            "issue": "camera_repair",
+            "action": "Replace primary camera module",
+            "cost": 85.0
+          }
+        ],
+        "total_repair_cost": 85.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "galaxy s22",
+        "matched_model_key": "galaxy s22",
+        "target_condition": "Good",
+        "market_resale_value": 290.0,
+        "estimated_acquisition_cost": 101.5,
+        "repair_cost": 85.0,
+        "total_investment": 186.5,
+        "net_profit": 103.5,
+        "profit_margin_percentage": 35.7,
+        "roi_percentage": 55.5,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.15,
+        "reasoning": "Healthy profit margin and moderate demand for Galaxy S series."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_seed09_report.md",
+      "ebay_listing": "# Professional Refurbished Samsung galaxy s22\n- Resale Condition: Good\n- Tested: Fully Functional.\n- Repairs completed: Replace primary camera module.",
+      "report_markdown": "# Refurbishment Report for galaxy s22"
+    }
+  },
+  {
+    "session_id": "session_276b85bd",
+    "timestamp": "2026-06-26T11:06:28.300580Z",
+    "device": {
+      "brand": "Generic",
+      "model": "iphone 13",
+      "target_condition": "Excellent",
+      "image_path": "uploads/temp_upload.jpeg"
+    },
+    "analysis": {
+      "specs": {
+        "brand": "Apple",
+        "model": "iPhone 13",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Super Retina XDR OLED",
+          "processor": "Apple A15 Bionic",
+          "storage_options": [
+            "128GB",
+            "256GB",
+            "512GB"
+          ],
+          "battery": "3240 mAh"
+        }
+      },
+      "refurbishment": {
+        "device": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Perform screen replacement",
+            "cost": 150.0
+          }
+        ],
+        "total_repair_cost": 150.0,
+        "currency": "USD"
+      },
+      "pricing": {
+        "model_name": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "target_condition": "Excellent",
+        "market_resale_value": 450.0,
+        "estimated_acquisition_cost": 157.5,
+        "repair_cost": 150.0,
+        "total_investment": 307.5,
+        "net_profit": 142.5,
+        "profit_margin_percentage": 31.67,
+        "roi_percentage": 46.34,
+        "currency": "USD"
+      },
+      "validation_score": 1.0,
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.1,
+        "reasoning": "Excellent investment opportunity. Projected profit margin of 31.7% with low risk score of 0.10. Strong ROI with net profit of $142.50."
+      }
+    },
+    "listing": {
+      "report_file": "reports/session_276b85bd_report.md",
+      "ebay_listing": "# Professional Refurbished Apple iPhone 13\n\n## Device Specifications\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## Condition & Refurbishment Details\n- **Resale Grade Condition**: Excellent\n- **Refurbishment Process Completed**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Testing Status**: Passed rigorous quality validation. Fully functional.\n\n## Pricing & Shipping\n- **Price**: $450.00 (Firm)\n- **Fast Shipping**: Shipped secure within 24 hours.\n\n*Perfect working order. Buy with confidence!*",
+      "report_markdown": "# AI Refurbishment & Resale Report\n**Session ID**: session_276b85bd\n**Report Generated**: 2026-06-26 11:06:28 UTC\n\n---\n\n## 1. Device Profile\n- **Brand**: Apple\n- **Model**: iPhone 13\n- **Release Year**: 2021\n- **Hardware Specs**:\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## 2. Refurbishment Diagnostics\n- **Target Condition**: Excellent\n- **Required Repairs & Estimated Costs**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Total Refurbishment Budget**: $150.00\n\n## 3. Financial Analysis\n- **Estimated Acquisition Cost**: $157.50\n- **Refurbishment Cost**: $150.00\n- **Total Investment**: $307.50\n- **Estimated Resale Price**: $450.00\n- **Projected Net Profit**: $142.50\n- **Profit Margin**: 31.67%\n- **ROI**: 46.34%\n\n---\n\n## 4. Generated Marketplace Listing (Markdown)\n```markdown\n# Professional Refurbished Apple iPhone 13\n\n## Device Specifications\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## Condition & Refurbishment Details\n- **Resale Grade Condition**: Excellent\n- **Refurbishment Process Completed**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Testing Status**: Passed rigorous quality validation. Fully functional.\n\n## Pricing & Shipping\n- **Price**: $450.00 (Firm)\n- **Fast Shipping**: Shipped secure within 24 hours.\n\n*Perfect working order. Buy with confidence!*\n```\n"
+    }
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "iphone 13": {
+    "brand": "Apple",
+    "model": "iPhone 13",
+    "release_year": 2021,
+    "specs": {
+      "screen_size": "6.1 inches",
+      "display": "Super Retina XDR OLED",
+      "processor": "Apple A15 Bionic",
+      "storage_options": ["128GB", "256GB", "512GB"],
+      "battery": "3240 mAh"
+    }
+  },
+  "iphone 14": {
+    "brand": "Apple",
+    "model": "iPhone 14",
+    "release_year": 2022,
+    "specs": {
+      "screen_size": "6.1 inches",
+      "display": "Super Retina XDR OLED",
+      "processor": "Apple A15 Bionic",
+      "storage_options": ["128GB", "256GB", "512GB"],
+      "battery": "3279 mAh"
+    }
+  },
+  "macbook pro m1 2020": {
+    "brand": "Apple",
+    "model": "MacBook Pro M1 2020",
+    "release_year": 2020,
+    "specs": {
+      "screen_size": "13.3 inches",
+      "display": "Retina IPS display",
+      "processor": "Apple M1 (8-core)",
+      "storage_options": ["256GB", "512GB", "1TB", "2TB"],
+      "ram_options": ["8GB", "16GB"]
+    }
+  },
+  "ipad pro 11 2021": {
+    "brand": "Apple",
+    "model": "iPad Pro 11-inch (3rd Gen)",
+    "release_year": 2021,
+    "specs": {
+      "screen_size": "11.0 inches",
+      "display": "Liquid Retina IPS LCD",
+      "processor": "Apple M1",
+      "storage_options": ["128GB", "256GB", "512GB", "1TB", "2TB"]
+    }
+  },
+  "galaxy s22": {
+    "brand": "Samsung",
+    "model": "Galaxy S22",
+    "release_year": 2022,
+    "specs": {
+      "screen_size": "6.1 inches",
+      "display": "Dynamic AMOLED 2X",
+      "processor": "Snapdragon 8 Gen 1 / Exynos 2200",
+      "storage_options": ["128GB", "256GB"],
+      "battery": "3700 mAh"
+    }
+  }
+}

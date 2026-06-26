@@ -1,0 +1,464 @@
+{
+  "session_id": "session_276b85bd",
+  "current_device": {
+    "profile": {
+      "requested_model": "iphone 13",
+      "condition": "Excellent",
+      "issues": [
+        "screen_replacement"
+      ]
+    },
+    "verified_model": "iphone 13",
+    "brand": "Generic",
+    "ocr_text": "DEVICE LABEL: TEMP UPLOAD | SERIAL NO: SN-6178363"
+  },
+  "current_analysis": {
+    "vision_agent": {
+      "verified_model": "iphone 13",
+      "brand": "Generic",
+      "ocr_text": "DEVICE LABEL: TEMP UPLOAD | SERIAL NO: SN-6178363"
+    },
+    "product_agent": {
+      "specs_raw": "{\n  \"brand\": \"Apple\",\n  \"model\": \"iPhone 13\",\n  \"release_year\": 2021,\n  \"specs\": {\n    \"screen_size\": \"6.1 inches\",\n    \"display\": \"Super Retina XDR OLED\",\n    \"processor\": \"Apple A15 Bionic\",\n    \"storage_options\": [\n      \"128GB\",\n      \"256GB\",\n      \"512GB\"\n    ],\n    \"battery\": \"3240 mAh\"\n  }\n}",
+      "specs_dict": {
+        "brand": "Apple",
+        "model": "iPhone 13",
+        "release_year": 2021,
+        "specs": {
+          "screen_size": "6.1 inches",
+          "display": "Super Retina XDR OLED",
+          "processor": "Apple A15 Bionic",
+          "storage_options": [
+            "128GB",
+            "256GB",
+            "512GB"
+          ],
+          "battery": "3240 mAh"
+        }
+      }
+    },
+    "refurbishment_agent": {
+      "repair_raw": "{\n  \"device\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"repairs\": [\n    {\n      \"issue\": \"screen_replacement\",\n      \"action\": \"Perform screen replacement\",\n      \"cost\": 150.0\n    }\n  ],\n  \"total_repair_cost\": 150.0,\n  \"currency\": \"USD\"\n}",
+      "repair_dict": {
+        "device": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "repairs": [
+          {
+            "issue": "screen_replacement",
+            "action": "Perform screen replacement",
+            "cost": 150.0
+          }
+        ],
+        "total_repair_cost": 150.0,
+        "currency": "USD"
+      },
+      "total_repair_cost": 150.0
+    },
+    "resale_agent": {
+      "pricing_raw": "{\n  \"model_name\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"target_condition\": \"Excellent\",\n  \"market_resale_value\": 450.0,\n  \"estimated_acquisition_cost\": 157.5,\n  \"repair_cost\": 150.0,\n  \"total_investment\": 307.5,\n  \"net_profit\": 142.5,\n  \"profit_margin_percentage\": 31.67,\n  \"roi_percentage\": 46.34,\n  \"currency\": \"USD\"\n}",
+      "pricing_dict": {
+        "model_name": "iphone 13",
+        "matched_model_key": "iphone 13",
+        "target_condition": "Excellent",
+        "market_resale_value": 450.0,
+        "estimated_acquisition_cost": 157.5,
+        "repair_cost": 150.0,
+        "total_investment": 307.5,
+        "net_profit": 142.5,
+        "profit_margin_percentage": 31.67,
+        "roi_percentage": 46.34,
+        "currency": "USD"
+      }
+    },
+    "evaluator_agent": {
+      "approved": true,
+      "score": 1.0,
+      "errors": [],
+      "warnings": [],
+      "notes": "All validation checks passed successfully. Financial model and specifications validated.",
+      "investment_recommendation": {
+        "recommendation": "BUY",
+        "risk_score": 0.1,
+        "reasoning": "Excellent investment opportunity. Projected profit margin of 31.7% with low risk score of 0.10. Strong ROI with net profit of $142.50."
+      }
+    },
+    "listing_generator": {
+      "report_file": "reports/session_276b85bd_report.md",
+      "ebay_listing": "# Professional Refurbished Apple iPhone 13\n\n## Device Specifications\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## Condition & Refurbishment Details\n- **Resale Grade Condition**: Excellent\n- **Refurbishment Process Completed**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Testing Status**: Passed rigorous quality validation. Fully functional.\n\n## Pricing & Shipping\n- **Price**: $450.00 (Firm)\n- **Fast Shipping**: Shipped secure within 24 hours.\n\n*Perfect working order. Buy with confidence!*",
+      "report_markdown": "# AI Refurbishment & Resale Report\n**Session ID**: session_276b85bd\n**Report Generated**: 2026-06-26 11:06:28 UTC\n\n---\n\n## 1. Device Profile\n- **Brand**: Apple\n- **Model**: iPhone 13\n- **Release Year**: 2021\n- **Hardware Specs**:\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## 2. Refurbishment Diagnostics\n- **Target Condition**: Excellent\n- **Required Repairs & Estimated Costs**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Total Refurbishment Budget**: $150.00\n\n## 3. Financial Analysis\n- **Estimated Acquisition Cost**: $157.50\n- **Refurbishment Cost**: $150.00\n- **Total Investment**: $307.50\n- **Estimated Resale Price**: $450.00\n- **Projected Net Profit**: $142.50\n- **Profit Margin**: 31.67%\n- **ROI**: 46.34%\n\n---\n\n## 4. Generated Marketplace Listing (Markdown)\n```markdown\n# Professional Refurbished Apple iPhone 13\n\n## Device Specifications\n- **Screen Size**: 6.1 inches\n- **Display**: Super Retina XDR OLED\n- **Processor**: Apple A15 Bionic\n- **Storage Options**: ['128GB', '256GB', '512GB']\n- **Battery**: 3240 mAh\n\n## Condition & Refurbishment Details\n- **Resale Grade Condition**: Excellent\n- **Refurbishment Process Completed**:\n- Perform screen replacement (Estimated Cost: $150.00)\n- **Testing Status**: Passed rigorous quality validation. Fully functional.\n\n## Pricing & Shipping\n- **Price**: $450.00 (Firm)\n- **Fast Shipping**: Shipped secure within 24 hours.\n\n*Perfect working order. Buy with confidence!*\n```\n"
+    }
+  },
+  "current_workflow_state": "completed",
+  "plan": [
+    {
+      "step": 1,
+      "agent": "vision_agent",
+      "task": "identify_device",
+      "description": "Analyze image and run OCR to verify device identity.",
+      "payload": {
+        "image_path": "uploads/temp_upload.jpeg",
+        "estimated_model": "iphone 13"
+      }
+    },
+    {
+      "step": 2,
+      "agent": "product_agent",
+      "task": "retrieve_specs",
+      "description": "Fetch official product specifications and metadata from catalog.",
+      "payload": {
+        "model": "iphone 13"
+      }
+    },
+    {
+      "step": 3,
+      "agent": "refurbishment_agent",
+      "task": "estimate_repairs",
+      "description": "Evaluate required repairs and calculate estimated costs.",
+      "payload": {
+        "model": "iphone 13",
+        "issues": "screen_replacement"
+      }
+    },
+    {
+      "step": 4,
+      "agent": "resale_agent",
+      "task": "calculate_economics",
+      "description": "Compute resale valuation, target pricing, net profit, and ROI.",
+      "payload": {
+        "model": "iphone 13",
+        "target_condition": "Excellent",
+        "total_repair_cost": 0.0
+      }
+    },
+    {
+      "step": 5,
+      "agent": "evaluator_agent",
+      "task": "validate_outputs",
+      "description": "Audit all worker outputs for consistency, completeness, and positive margins.",
+      "payload": {}
+    }
+  ],
+  "messages": [
+    {
+      "sender": "orchestrator",
+      "receiver": "security_agent",
+      "task": "validate_request",
+      "payload": {
+        "user_input": "Evaluate this iPhone 13. Screen needs replacement. Target condition is Excellent.",
+        "file_metadata": {
+          "filename": "temp_upload.jpeg",
+          "filesize": 54825,
+          "extension": ".jpeg"
+        }
+      },
+      "timestamp": "2026-06-26T11:06:28.189922Z"
+    },
+    {
+      "sender": "security_agent",
+      "receiver": "orchestrator",
+      "task": "security_response",
+      "payload": {
+        "is_safe": true,
+        "reason": "Request successfully passed all security, size, and prompt safety audits."
+      },
+      "timestamp": "2026-06-26T11:06:28.191949Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "planner_agent",
+      "task": "create_plan",
+      "payload": {
+        "user_request": "Evaluate this iPhone 13. Screen needs replacement. Target condition is Excellent.",
+        "image_path": "uploads/temp_upload.jpeg"
+      },
+      "timestamp": "2026-06-26T11:06:28.195663Z"
+    },
+    {
+      "sender": "planner_agent",
+      "receiver": "orchestrator",
+      "task": "planner_response",
+      "payload": {
+        "parsed_model": "iphone 13",
+        "parsed_condition": "Excellent",
+        "parsed_issues": [
+          "screen_replacement"
+        ],
+        "plan_steps": [
+          {
+            "step": 1,
+            "agent": "vision_agent",
+            "task": "identify_device",
+            "description": "Analyze image and run OCR to verify device identity.",
+            "payload": {
+              "image_path": "uploads/temp_upload.jpeg",
+              "estimated_model": "iphone 13"
+            }
+          },
+          {
+            "step": 2,
+            "agent": "product_agent",
+            "task": "retrieve_specs",
+            "description": "Fetch official product specifications and metadata from catalog.",
+            "payload": {
+              "model": "iphone 13"
+            }
+          },
+          {
+            "step": 3,
+            "agent": "refurbishment_agent",
+            "task": "estimate_repairs",
+            "description": "Evaluate required repairs and calculate estimated costs.",
+            "payload": {
+              "model": "iphone 13",
+              "issues": "screen_replacement"
+            }
+          },
+          {
+            "step": 4,
+            "agent": "resale_agent",
+            "task": "calculate_economics",
+            "description": "Compute resale valuation, target pricing, net profit, and ROI.",
+            "payload": {
+              "model": "iphone 13",
+              "target_condition": "Excellent",
+              "total_repair_cost": 0.0
+            }
+          },
+          {
+            "step": 5,
+            "agent": "evaluator_agent",
+            "task": "validate_outputs",
+            "description": "Audit all worker outputs for consistency, completeness, and positive margins.",
+            "payload": {}
+          }
+        ]
+      },
+      "timestamp": "2026-06-26T11:06:28.197551Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "vision_agent",
+      "task": "identify_device",
+      "payload": {
+        "image_path": "uploads/temp_upload.jpeg",
+        "estimated_model": "iphone 13"
+      },
+      "timestamp": "2026-06-26T11:06:28.201125Z"
+    },
+    {
+      "sender": "vision_agent",
+      "receiver": "orchestrator",
+      "task": "vision_response",
+      "payload": {
+        "verified_model": "iphone 13",
+        "brand": "Generic",
+        "ocr_text": "DEVICE LABEL: TEMP UPLOAD | SERIAL NO: SN-6178363"
+      },
+      "timestamp": "2026-06-26T11:06:28.205356Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "product_agent",
+      "task": "retrieve_specs",
+      "payload": {
+        "model": "iphone 13",
+        "brand": "Generic"
+      },
+      "timestamp": "2026-06-26T11:06:28.214726Z"
+    },
+    {
+      "sender": "product_agent",
+      "receiver": "orchestrator",
+      "task": "product_response",
+      "payload": {
+        "specs_raw": "{\n  \"brand\": \"Apple\",\n  \"model\": \"iPhone 13\",\n  \"release_year\": 2021,\n  \"specs\": {\n    \"screen_size\": \"6.1 inches\",\n    \"display\": \"Super Retina XDR OLED\",\n    \"processor\": \"Apple A15 Bionic\",\n    \"storage_options\": [\n      \"128GB\",\n      \"256GB\",\n      \"512GB\"\n    ],\n    \"battery\": \"3240 mAh\"\n  }\n}",
+        "specs_dict": {
+          "brand": "Apple",
+          "model": "iPhone 13",
+          "release_year": 2021,
+          "specs": {
+            "screen_size": "6.1 inches",
+            "display": "Super Retina XDR OLED",
+            "processor": "Apple A15 Bionic",
+            "storage_options": [
+              "128GB",
+              "256GB",
+              "512GB"
+            ],
+            "battery": "3240 mAh"
+          }
+        }
+      },
+      "timestamp": "2026-06-26T11:06:28.232408Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "refurbishment_agent",
+      "task": "estimate_repairs",
+      "payload": {
+        "model": "iphone 13",
+        "brand": "Generic",
+        "specs": {
+          "brand": "Apple",
+          "model": "iPhone 13",
+          "release_year": 2021,
+          "specs": {
+            "screen_size": "6.1 inches",
+            "display": "Super Retina XDR OLED",
+            "processor": "Apple A15 Bionic",
+            "storage_options": [
+              "128GB",
+              "256GB",
+              "512GB"
+            ],
+            "battery": "3240 mAh"
+          }
+        },
+        "issues": "screen_replacement"
+      },
+      "timestamp": "2026-06-26T11:06:28.234895Z"
+    },
+    {
+      "sender": "refurbishment_agent",
+      "receiver": "orchestrator",
+      "task": "refurbishment_response",
+      "payload": {
+        "repair_raw": "{\n  \"device\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"repairs\": [\n    {\n      \"issue\": \"screen_replacement\",\n      \"action\": \"Perform screen replacement\",\n      \"cost\": 150.0\n    }\n  ],\n  \"total_repair_cost\": 150.0,\n  \"currency\": \"USD\"\n}",
+        "repair_dict": {
+          "device": "iphone 13",
+          "matched_model_key": "iphone 13",
+          "repairs": [
+            {
+              "issue": "screen_replacement",
+              "action": "Perform screen replacement",
+              "cost": 150.0
+            }
+          ],
+          "total_repair_cost": 150.0,
+          "currency": "USD"
+        },
+        "total_repair_cost": 150.0
+      },
+      "timestamp": "2026-06-26T11:06:28.250724Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "resale_agent",
+      "task": "calculate_economics",
+      "payload": {
+        "model": "iphone 13",
+        "brand": "Generic",
+        "target_condition": "Excellent",
+        "total_repair_cost": 150.0
+      },
+      "timestamp": "2026-06-26T11:06:28.254427Z"
+    },
+    {
+      "sender": "resale_agent",
+      "receiver": "orchestrator",
+      "task": "resale_response",
+      "payload": {
+        "pricing_raw": "{\n  \"model_name\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"target_condition\": \"Excellent\",\n  \"market_resale_value\": 450.0,\n  \"estimated_acquisition_cost\": 157.5,\n  \"repair_cost\": 150.0,\n  \"total_investment\": 307.5,\n  \"net_profit\": 142.5,\n  \"profit_margin_percentage\": 31.67,\n  \"roi_percentage\": 46.34,\n  \"currency\": \"USD\"\n}",
+        "pricing_dict": {
+          "model_name": "iphone 13",
+          "matched_model_key": "iphone 13",
+          "target_condition": "Excellent",
+          "market_resale_value": 450.0,
+          "estimated_acquisition_cost": 157.5,
+          "repair_cost": 150.0,
+          "total_investment": 307.5,
+          "net_profit": 142.5,
+          "profit_margin_percentage": 31.67,
+          "roi_percentage": 46.34,
+          "currency": "USD"
+        }
+      },
+      "timestamp": "2026-06-26T11:06:28.270639Z"
+    },
+    {
+      "sender": "orchestrator",
+      "receiver": "evaluator_agent",
+      "task": "validate_outputs",
+      "payload": {
+        "all_agent_outputs": {
+          "vision_agent": {
+            "verified_model": "iphone 13",
+            "brand": "Generic",
+            "ocr_text": "DEVICE LABEL: TEMP UPLOAD | SERIAL NO: SN-6178363"
+          },
+          "product_agent": {
+            "specs_raw": "{\n  \"brand\": \"Apple\",\n  \"model\": \"iPhone 13\",\n  \"release_year\": 2021,\n  \"specs\": {\n    \"screen_size\": \"6.1 inches\",\n    \"display\": \"Super Retina XDR OLED\",\n    \"processor\": \"Apple A15 Bionic\",\n    \"storage_options\": [\n      \"128GB\",\n      \"256GB\",\n      \"512GB\"\n    ],\n    \"battery\": \"3240 mAh\"\n  }\n}",
+            "specs_dict": {
+              "brand": "Apple",
+              "model": "iPhone 13",
+              "release_year": 2021,
+              "specs": {
+                "screen_size": "6.1 inches",
+                "display": "Super Retina XDR OLED",
+                "processor": "Apple A15 Bionic",
+                "storage_options": [
+                  "128GB",
+                  "256GB",
+                  "512GB"
+                ],
+                "battery": "3240 mAh"
+              }
+            }
+          },
+          "refurbishment_agent": {
+            "repair_raw": "{\n  \"device\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"repairs\": [\n    {\n      \"issue\": \"screen_replacement\",\n      \"action\": \"Perform screen replacement\",\n      \"cost\": 150.0\n    }\n  ],\n  \"total_repair_cost\": 150.0,\n  \"currency\": \"USD\"\n}",
+            "repair_dict": {
+              "device": "iphone 13",
+              "matched_model_key": "iphone 13",
+              "repairs": [
+                {
+                  "issue": "screen_replacement",
+                  "action": "Perform screen replacement",
+                  "cost": 150.0
+                }
+              ],
+              "total_repair_cost": 150.0,
+              "currency": "USD"
+            },
+            "total_repair_cost": 150.0
+          },
+          "resale_agent": {
+            "pricing_raw": "{\n  \"model_name\": \"iphone 13\",\n  \"matched_model_key\": \"iphone 13\",\n  \"target_condition\": \"Excellent\",\n  \"market_resale_value\": 450.0,\n  \"estimated_acquisition_cost\": 157.5,\n  \"repair_cost\": 150.0,\n  \"total_investment\": 307.5,\n  \"net_profit\": 142.5,\n  \"profit_margin_percentage\": 31.67,\n  \"roi_percentage\": 46.34,\n  \"currency\": \"USD\"\n}",
+            "pricing_dict": {
+              "model_name": "iphone 13",
+              "matched_model_key": "iphone 13",
+              "target_condition": "Excellent",
+              "market_resale_value": 450.0,
+              "estimated_acquisition_cost": 157.5,
+              "repair_cost": 150.0,
+              "total_investment": 307.5,
+              "net_profit": 142.5,
+              "profit_margin_percentage": 31.67,
+              "roi_percentage": 46.34,
+              "currency": "USD"
+            }
+          }
+        }
+      },
+      "timestamp": "2026-06-26T11:06:28.281477Z"
+    },
+    {
+      "sender": "evaluator_agent",
+      "receiver": "orchestrator",
+      "task": "evaluator_response",
+      "payload": {
+        "approved": true,
+        "score": 1.0,
+        "errors": [],
+        "warnings": [],
+        "notes": "All validation checks passed successfully. Financial model and specifications validated.",
+        "investment_recommendation": {
+          "recommendation": "BUY",
+          "risk_score": 0.1,
+          "reasoning": "Excellent investment opportunity. Projected profit margin of 31.7% with low risk score of 0.10. Strong ROI with net profit of $142.50."
+        }
+      },
+      "timestamp": "2026-06-26T11:06:28.285206Z"
+    }
+  ]
+}

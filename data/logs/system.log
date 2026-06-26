@@ -1,0 +1,391 @@
+[2026-06-23 02:38:03] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_0f78b079
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.002s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: NO_IMAGE | No image provided. Using estimated model.
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.000s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: SUCCESS | Latency: 0.000s | Payload: {'model_query': 'iphone 13'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.001s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $150.00
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.001s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $450.00 | Margin: 31.67%
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.001s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: True | Score: 1.00 | Errors: 0, Warnings: 0
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.000s
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | listing_server.generate_marketplace_listing with args: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_0f78b079'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Called listing_server.generate_marketplace_listing | Status: SUCCESS | Latency: 0.002s | Payload: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_0f78b079'}
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Session session_0f78b079 finalized successfully.
+[2026-06-23 02:38:36] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.047s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_62500ac6
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.000s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: NO_IMAGE | No image provided. Using estimated model.
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.000s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: SUCCESS | Latency: 0.000s | Payload: {'model_query': 'iphone 13'}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.001s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement,battery_replacement,charging_port_repair,logic_board_repair'}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement,battery_replacement,charging_port_repair,logic_board_repair'}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $460.00
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.001s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Fair', 'total_repair_cost': 460.0}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Fair', 'total_repair_cost': 460.0}
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $300.00 | Margin: -88.33%
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.001s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-23 02:39:29] [WARNING] [ElectronicsRefurbResale] [evaluator_agent] Validation Failed for [Financial Sanity] | Reason: Negative Profitability: Total investment ($565.00) exceeds resale value ($300.00), yielding a net loss of $-265.00.
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: False | Score: 0.60 | Errors: 1, Warnings: 0
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.000s
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Evaluator rejected the workflow: Validation issues discovered. Errors: Negative Profitability: Total investment ($565.00) exceeds resale value ($300.00), yielding a net loss of $-265.00. | Warnings: 
+[2026-06-23 02:39:29] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.038s
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_dd3950e6
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 02:39:57] [WARNING] [ElectronicsRefurbResale] [security_agent] Validation Failed for [User Query Safety] | Reason: Potential prompt injection detected. Blocked input matching: 'ignore previous instructions'
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Security rejection: Potential prompt injection detected. Blocked input matching: 'ignore previous instructions'
+[2026-06-23 02:39:57] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.015s
+[2026-06-23 03:43:51] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-23 03:43:51] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_c5c63160
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 03:48:45] [WARNING] [ElectronicsRefurbResale] [security_agent] Validation Failed for [File Upload] | Reason: File extension '.jfif' is not allowed. Supported formats: .jpg, .webp, .png, .jpeg
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.001s
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Security rejection: File extension '.jfif' is not allowed. Supported formats: .jpg, .webp, .png, .jpeg
+[2026-06-23 03:48:45] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.023s
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_4dabcd3b
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 03:49:44] [WARNING] [ElectronicsRefurbResale] [security_agent] Validation Failed for [File Upload] | Reason: File extension '.jfif' is not allowed. Supported formats: .jpg, .webp, .png, .jpeg
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.001s
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Security rejection: File extension '.jfif' is not allowed. Supported formats: .jpg, .webp, .png, .jpeg
+[2026-06-23 03:49:44] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.023s
+[2026-06-23 03:53:30] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-23 03:53:30] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 20:47:49] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-23 20:47:49] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_f2e8d37d
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-23 21:06:59] [WARNING] [ElectronicsRefurbResale] [security_agent] Validation Failed for [File Upload] | Reason: File extension '.jfif' is not allowed. Supported formats: .jpeg, .jpg, .webp, .png
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.002s
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Security rejection: File extension '.jfif' is not allowed. Supported formats: .jpeg, .jpg, .webp, .png
+[2026-06-23 21:06:59] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.025s
+[2026-06-24 00:27:10] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 00:27:10] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:05:43] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 01:05:43] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:23:14] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 01:23:14] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:33:38] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 01:33:38] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:42:31] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp'
+[2026-06-24 01:42:31] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:49:40] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 01:49:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_05a2dcca
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.002s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.001s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | ocr_server.extract_text_from_image with args: {'image_path': 'uploads/temp_upload.png'}
+[2026-06-24 01:50:15] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to ocr_server.extract_text_from_image failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/ocr_server.py', 'extract_text_from_image', '--image_path', 'uploads/temp_upload.png']' returned non-zero exit status 1.
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Called ocr_server.extract_text_from_image | Status: FAILED | Latency: 0.123s | Payload: {'image_path': 'uploads/temp_upload.png'}
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: IDENTIFICATION_SUCCESS | Identified as: Generic iphone 13
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.126s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-24 01:50:15] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to product_server.get_product_specs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/product_server.py', 'get_product_specs', '--model_query', 'iphone 13']' returned non-zero exit status 1.
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: FAILED | Latency: 0.120s | Payload: {'model_query': 'iphone 13'}
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.121s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 01:50:15] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to repair_server.estimate_repair_costs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/repair_server.py', 'estimate_repair_costs', '--model_name', 'iphone 13', '--issues_list', 'screen_replacement']' returned non-zero exit status 1.
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: FAILED | Latency: 0.110s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $0.00
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.111s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 01:50:15] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to pricing_server.calculate_market_resale failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/pricing_server.py', 'calculate_market_resale', '--model_name', 'iphone 13', '--target_condition', 'Excellent', '--total_repair_cost', '0.0']' returned non-zero exit status 1.
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: FAILED | Latency: 0.102s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $0.00 | Margin: 0.0%
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.105s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-24 01:50:15] [WARNING] [ElectronicsRefurbResale] [evaluator_agent] Validation Failed for [Financial Sanity] | Reason: Negative Profitability: Total investment ($0.00) exceeds resale value ($0.00), yielding a net loss of $0.00.
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: False | Score: 0.60 | Errors: 1, Warnings: 0
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.001s
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Evaluator rejected the workflow: Validation issues discovered. Errors: Negative Profitability: Total investment ($0.00) exceeds resale value ($0.00), yielding a net loss of $0.00. | Warnings: 
+[2026-06-24 01:50:15] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.509s
+[2026-06-24 02:42:55] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:42:55] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:43:36] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:43:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:45:10] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:45:10] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:48:24] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:48:24] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:51:56] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:51:56] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:53:19] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:53:19] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:54:13] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:54:13] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 02:55:21] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp.server'
+[2026-06-24 02:55:21] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 12:52:26] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp'
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_17563152
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.000s
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: NO_IMAGE | No image provided. Using estimated model.
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.000s
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-24 12:52:26] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to product_server.get_product_specs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/product_server.py', 'get_product_specs', '--model_query', 'iphone 13']' returned non-zero exit status 1.
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: FAILED | Latency: 0.095s | Payload: {'model_query': 'iphone 13'}
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.095s
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-24 12:52:26] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 12:52:27] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to repair_server.estimate_repair_costs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/repair_server.py', 'estimate_repair_costs', '--model_name', 'iphone 13', '--issues_list', 'screen_replacement']' returned non-zero exit status 1.
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: FAILED | Latency: 0.090s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $0.00
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.091s
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 12:52:27] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to pricing_server.calculate_market_resale failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/pricing_server.py', 'calculate_market_resale', '--model_name', 'iphone 13', '--target_condition', 'Excellent', '--total_repair_cost', '0.0']' returned non-zero exit status 1.
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: FAILED | Latency: 0.098s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $0.00 | Margin: 0.0%
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.098s
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-24 12:52:27] [WARNING] [ElectronicsRefurbResale] [evaluator_agent] Validation Failed for [Financial Sanity] | Reason: Negative Profitability: Total investment ($0.00) exceeds resale value ($0.00), yielding a net loss of $0.00.
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: STARTED | Action: evaluate_investment
+[2026-06-24 12:52:27] [ERROR] [ElectronicsRefurbResale] [InvestmentAgent] Error: Action: evaluate_investment failed: type object 'ContextEngineer' has no attribute 'get_investment_context'
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: FAILED | Action: evaluate_investment | Error: type object 'ContextEngineer' has no attribute 'get_investment_context' in 0.000s
+[2026-06-24 12:52:27] [ERROR] [ElectronicsRefurbResale] [EvaluatorAgent] Error: Action: validate_outputs failed: type object 'ContextEngineer' has no attribute 'get_investment_context'
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: FAILED | Action: validate_outputs | Error: type object 'ContextEngineer' has no attribute 'get_investment_context' in 0.001s
+[2026-06-24 12:52:27] [ERROR] [ElectronicsRefurbResale] [Orchestrator] Error: Action: run_pipeline failed: type object 'ContextEngineer' has no attribute 'get_investment_context'
+[2026-06-24 12:52:27] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Action: run_pipeline | Error: type object 'ContextEngineer' has no attribute 'get_investment_context' in 0.314s
+[2026-06-24 12:56:39] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Failed to dynamically import local server scripts: No module named 'mcp'
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_23324774
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.000s
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: NO_IMAGE | No image provided. Using estimated model.
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.000s
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-24 12:56:39] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-24 12:56:40] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to product_server.get_product_specs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/product_server.py', 'get_product_specs', '--model_query', 'iphone 13']' returned non-zero exit status 1.
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: FAILED | Latency: 0.102s | Payload: {'model_query': 'iphone 13'}
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.103s
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 12:56:40] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to repair_server.estimate_repair_costs failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/repair_server.py', 'estimate_repair_costs', '--model_name', 'iphone 13', '--issues_list', 'screen_replacement']' returned non-zero exit status 1.
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: FAILED | Latency: 0.105s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $0.00
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.106s
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 12:56:40] [ERROR] [ElectronicsRefurbResale] [MCP Client] Error: Subprocess stdio call to pricing_server.calculate_market_resale failed: Command '['C:\\Users\\admin\\Desktop\\Aaryagujar\\Kaggle project\\.venv\\Scripts\\python.exe', 'mcp/servers/pricing_server.py', 'calculate_market_resale', '--model_name', 'iphone 13', '--target_condition', 'Excellent', '--total_repair_cost', '0.0']' returned non-zero exit status 1.
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: FAILED | Latency: 0.096s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 0.0}
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $0.00 | Margin: 0.0%
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.096s
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-24 12:56:40] [WARNING] [ElectronicsRefurbResale] [evaluator_agent] Validation Failed for [Financial Sanity] | Reason: Negative Profitability: Total investment ($0.00) exceeds resale value ($0.00), yielding a net loss of $0.00.
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: STARTED | Action: evaluate_investment
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [investment_agent] Status: RECOMMENDATION_ISSUED | Decision: REJECT | Risk: 0.70 | Margin: 0.0%
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: COMPLETED | Action: evaluate_investment | Success in 0.000s
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: False | Score: 0.60 | Errors: 1, Warnings: 0
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.001s
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: FAILED | Evaluator rejected the workflow: Validation issues discovered. Errors: Negative Profitability: Total investment ($0.00) exceeds resale value ($0.00), yielding a net loss of $0.00. | Warnings: 
+[2026-06-24 12:56:40] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.341s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_4dcc80ce
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.000s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.000s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: NO_IMAGE | No image provided. Using estimated model.
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.000s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: SUCCESS | Latency: 0.008s | Payload: {'model_query': 'iphone 13'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.009s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $150.00
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.001s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: SUCCESS | Latency: 0.000s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $450.00 | Margin: 31.67%
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.001s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: STARTED | Action: evaluate_investment
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [investment_agent] Status: RECOMMENDATION_ISSUED | Decision: BUY | Risk: 0.10 | Margin: 31.7%
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: COMPLETED | Action: evaluate_investment | Success in 0.000s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: True | Score: 1.00 | Errors: 0, Warnings: 0
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.001s
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | listing_server.generate_marketplace_listing with args: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_4dcc80ce'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [MCP Client] Called listing_server.generate_marketplace_listing | Status: SUCCESS | Latency: 0.001s | Payload: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_4dcc80ce'}
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Session session_4dcc80ce finalized successfully.
+[2026-06-24 13:14:46] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.048s
+[2026-06-24 16:38:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 16:46:14] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 16:47:03] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 16:48:06] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-24 16:48:06] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-24 16:48:06] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.006s
+[2026-06-24 16:51:43] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 16:52:31] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-24 16:52:31] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-24 16:52:31] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.003s
+[2026-06-24 21:01:11] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 21:04:36] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 21:06:44] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 21:08:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 21:09:29] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-24 21:09:29] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-24 21:09:29] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.003s
+[2026-06-24 21:12:26] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-24 21:12:26] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-24 21:12:26] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.002s
+[2026-06-24 21:15:12] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-24 21:15:24] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-24 21:15:24] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-24 21:15:24] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.010s
+[2026-06-25 00:43:49] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-25 01:19:02] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_b562d730
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.001s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.001s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | ocr_server.extract_text_from_image with args: {'image_path': 'uploads/temp_upload.png'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Called ocr_server.extract_text_from_image | Status: SUCCESS | Latency: 0.001s | Payload: {'image_path': 'uploads/temp_upload.png'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: IDENTIFICATION_SUCCESS | Identified as: Generic iphone 13
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.004s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: SUCCESS | Latency: 0.002s | Payload: {'model_query': 'iphone 13'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.005s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: SUCCESS | Latency: 0.001s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $150.00
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.003s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: SUCCESS | Latency: 0.003s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $450.00 | Margin: 31.67%
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.004s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: STARTED | Action: evaluate_investment
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [investment_agent] Status: RECOMMENDATION_ISSUED | Decision: BUY | Risk: 0.10 | Margin: 31.7%
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: COMPLETED | Action: evaluate_investment | Success in 0.002s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: True | Score: 1.00 | Errors: 0, Warnings: 0
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.005s
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | listing_server.generate_marketplace_listing with args: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_b562d730'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [MCP Client] Called listing_server.generate_marketplace_listing | Status: SUCCESS | Latency: 0.005s | Payload: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_b562d730'}
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Session session_b562d730 finalized successfully.
+[2026-06-25 01:19:41] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.104s
+[2026-06-25 01:21:01] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-25 01:21:01] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-25 01:21:01] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.002s
+[2026-06-25 23:26:26] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-25 23:27:06] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-25 23:27:06] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-25 23:27:06] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.033s
+[2026-06-26 16:32:44] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: INITIALIZED | Client mode: direct
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Action: run_pipeline
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: STARTED | Initializing new session: session_276b85bd
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: STARTED | Action: validate_request
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [SecurityAgent] Status: COMPLETED | Action: validate_request | Success in 0.001s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: STARTED | Action: create_plan
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [planner_agent] Status: PLAN_CREATED | Generated 5 plan steps for iphone 13
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [PlannerAgent] Status: COMPLETED | Action: create_plan | Success in 0.001s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: STARTED | Action: identify_device
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | ocr_server.extract_text_from_image with args: {'image_path': 'uploads/temp_upload.jpeg'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Called ocr_server.extract_text_from_image | Status: SUCCESS | Latency: 0.001s | Payload: {'image_path': 'uploads/temp_upload.jpeg'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [vision_agent] Status: IDENTIFICATION_SUCCESS | Identified as: Generic iphone 13
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [VisionAgent] Status: COMPLETED | Action: identify_device | Success in 0.004s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: STARTED | Action: retrieve_specs
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | product_server.get_product_specs with args: {'model_query': 'iphone 13'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Called product_server.get_product_specs | Status: SUCCESS | Latency: 0.015s | Payload: {'model_query': 'iphone 13'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [product_agent] Status: SPECS_RETRIEVED | Metadata loaded for iphone 13
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [ProductIntelligenceAgent] Status: COMPLETED | Action: retrieve_specs | Success in 0.017s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: STARTED | Action: estimate_repairs
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | repair_server.estimate_repair_costs with args: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Called repair_server.estimate_repair_costs | Status: SUCCESS | Latency: 0.013s | Payload: {'model_name': 'iphone 13', 'issues_list': 'screen_replacement'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [refurbishment_agent] Status: REPAIRS_ESTIMATED | Cost: $150.00
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [RefurbishmentAgent] Status: COMPLETED | Action: estimate_repairs | Success in 0.015s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: STARTED | Action: calculate_economics
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | pricing_server.calculate_market_resale with args: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Called pricing_server.calculate_market_resale | Status: SUCCESS | Latency: 0.012s | Payload: {'model_name': 'iphone 13', 'target_condition': 'Excellent', 'total_repair_cost': 150.0}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [resale_agent] Status: ECONOMICS_CALCULATED | Resale Value: $450.00 | Margin: 31.67%
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [ResaleAgent] Status: COMPLETED | Action: calculate_economics | Success in 0.015s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: STARTED | Action: validate_outputs
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: STARTED | Action: evaluate_investment
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [investment_agent] Status: RECOMMENDATION_ISSUED | Decision: BUY | Risk: 0.10 | Margin: 31.7%
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [InvestmentAgent] Status: COMPLETED | Action: evaluate_investment | Success in 0.001s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [evaluator_agent] Status: EVALUATION_COMPLETED | Approved: True | Score: 1.00 | Errors: 0, Warnings: 0
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [EvaluatorAgent] Status: COMPLETED | Action: validate_outputs | Success in 0.003s
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Status: CALLING_TOOL | listing_server.generate_marketplace_listing with args: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_276b85bd'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [MCP Client] Called listing_server.generate_marketplace_listing | Status: SUCCESS | Latency: 0.005s | Payload: {'model_name': 'iphone 13', 'condition': 'Excellent', 'specs_json': '{\n  "brand": "Apple",\n  "model": "iPhone 13",\n  "release_year": 2021,\n  "specs": {\n    "screen_size": "6.1 inches",\n    "display": "Super Retina XDR OLED",\n    "processor": "Apple A15 Bionic",\n    "storage_options": [\n      "128GB",\n      "256GB",\n      "512GB"\n    ],\n    "battery": "3240 mAh"\n  }\n}', 'repair_json': '{\n  "device": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "repairs": [\n    {\n      "issue": "screen_replacement",\n      "action": "Perform screen replacement",\n      "cost": 150.0\n    }\n  ],\n  "total_repair_cost": 150.0,\n  "currency": "USD"\n}', 'pricing_json': '{\n  "model_name": "iphone 13",\n  "matched_model_key": "iphone 13",\n  "target_condition": "Excellent",\n  "market_resale_value": 450.0,\n  "estimated_acquisition_cost": 157.5,\n  "repair_cost": 150.0,\n  "total_investment": 307.5,\n  "net_profit": 142.5,\n  "profit_margin_percentage": 31.67,\n  "roi_percentage": 46.34,\n  "currency": "USD"\n}', 'session_id': 'session_276b85bd'}
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Session session_276b85bd finalized successfully.
+[2026-06-26 16:36:28] [INFO] [ElectronicsRefurbResale] [Orchestrator] Status: COMPLETED | Action: run_pipeline | Success in 0.124s
+[2026-06-26 16:37:28] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: STARTED | Action: analyze_market
+[2026-06-26 16:37:28] [INFO] [ElectronicsRefurbResale] [market_intelligence_agent] Status: MARKET_ANALYSIS_COMPLETE | Analyzed 1 device(s)
+[2026-06-26 16:37:28] [INFO] [ElectronicsRefurbResale] [MarketIntelligenceAgent] Status: COMPLETED | Action: analyze_market | Success in 0.017s

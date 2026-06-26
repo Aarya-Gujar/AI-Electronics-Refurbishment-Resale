@@ -1,0 +1,32 @@
+{
+  "iphone 13": {
+    "Excellent": 450.00,
+    "Good": 380.00,
+    "Fair": 300.00
+  },
+  "iphone 14": {
+    "Excellent": 550.00,
+    "Good": 470.00,
+    "Fair": 380.00
+  },
+  "macbook pro m1 2020": {
+    "Excellent": 750.00,
+    "Good": 630.00,
+    "Fair": 500.00
+  },
+  "ipad pro 11 2021": {
+    "Excellent": 500.00,
+    "Good": 420.00,
+    "Fair": 320.00
+  },
+  "galaxy s22": {
+    "Excellent": 350.00,
+    "Good": 290.00,
+    "Fair": 220.00
+  },
+  "default": {
+    "Excellent": 200.00,
+    "Good": 150.00,
+    "Fair": 100.00
+  }
+}

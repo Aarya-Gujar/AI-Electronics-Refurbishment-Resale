@@ -1,0 +1,57 @@
+{
+  "iphone 13": {
+    "demand_level": "High",
+    "market_trend": "Stable",
+    "avg_days_to_sell": 5,
+    "supply_availability": "Moderate",
+    "seasonal_factor": 1.05,
+    "buyer_interest_score": 8.5,
+    "recommended_platforms": ["eBay", "Swappa", "Facebook Marketplace"],
+    "price_history_30d": [440, 445, 450, 448, 452, 450],
+    "category": "Smartphone"
+  },
+  "iphone 14": {
+    "demand_level": "High",
+    "market_trend": "Rising",
+    "avg_days_to_sell": 3,
+    "supply_availability": "Low",
+    "seasonal_factor": 1.10,
+    "buyer_interest_score": 9.2,
+    "recommended_platforms": ["eBay", "Swappa", "Back Market"],
+    "price_history_30d": [540, 545, 548, 550, 555, 550],
+    "category": "Smartphone"
+  },
+  "macbook pro m1 2020": {
+    "demand_level": "Medium",
+    "market_trend": "Declining",
+    "avg_days_to_sell": 10,
+    "supply_availability": "High",
+    "seasonal_factor": 0.95,
+    "buyer_interest_score": 7.0,
+    "recommended_platforms": ["eBay", "Swappa", "Apple Trade-In"],
+    "price_history_30d": [760, 755, 750, 745, 742, 740],
+    "category": "Laptop"
+  },
+  "ipad pro 11 2021": {
+    "demand_level": "Medium",
+    "market_trend": "Stable",
+    "avg_days_to_sell": 7,
+    "supply_availability": "Moderate",
+    "seasonal_factor": 1.00,
+    "buyer_interest_score": 7.5,
+    "recommended_platforms": ["eBay", "Swappa", "Facebook Marketplace"],
+    "price_history_30d": [495, 498, 500, 500, 502, 500],
+    "category": "Tablet"
+  },
+  "galaxy s22": {
+    "demand_level": "Low",
+    "market_trend": "Declining",
+    "avg_days_to_sell": 14,
+    "supply_availability": "High",
+    "seasonal_factor": 0.90,
+    "buyer_interest_score": 5.8,
+    "recommended_platforms": ["eBay", "Facebook Marketplace", "Mercari"],
+    "price_history_30d": [360, 355, 352, 350, 348, 345],
+    "category": "Smartphone"
+  }
+}

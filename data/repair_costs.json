@@ -1,0 +1,47 @@
+{
+  "iphone 13": {
+    "screen_replacement": 150.00,
+    "battery_replacement": 60.00,
+    "charging_port_repair": 50.00,
+    "camera_repair": 90.00,
+    "back_glass_replacement": 110.00,
+    "logic_board_repair": 200.00
+  },
+  "iphone 14": {
+    "screen_replacement": 180.00,
+    "battery_replacement": 70.00,
+    "charging_port_repair": 60.00,
+    "camera_repair": 110.00,
+    "back_glass_replacement": 130.00,
+    "logic_board_repair": 250.00
+  },
+  "macbook pro m1 2020": {
+    "screen_replacement": 350.00,
+    "battery_replacement": 120.00,
+    "keyboard_replacement": 150.00,
+    "trackpad_replacement": 90.00,
+    "logic_board_repair": 400.00
+  },
+  "ipad pro 11 2021": {
+    "screen_replacement": 220.00,
+    "battery_replacement": 90.00,
+    "charging_port_repair": 70.00,
+    "camera_repair": 80.00,
+    "logic_board_repair": 300.00
+  },
+  "galaxy s22": {
+    "screen_replacement": 140.00,
+    "battery_replacement": 55.00,
+    "charging_port_repair": 45.00,
+    "camera_repair": 85.00,
+    "back_glass_replacement": 70.00,
+    "logic_board_repair": 180.00
+  },
+  "default": {
+    "screen_replacement": 100.00,
+    "battery_replacement": 50.00,
+    "charging_port_repair": 40.00,
+    "camera_repair": 70.00,
+    "logic_board_repair": 150.00
+  }
+}
