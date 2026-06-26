@@ -72,9 +72,47 @@ The system then:
 # 🏗 System Architecture
 
 ```
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5d46f92c-5192-4c3e-a357-819eba94b9bb" />
-
+                        User
+                          │
+        Upload Image + Description
+                          │
+                          ▼
+                 Security Agent
+                          │
+          Validate & Sanitize Request
+                          │
+                          ▼
+                 Planner Agent
+                          │
+       Creates Execution Workflow Plan
+                          │
+        ┌─────────────┬─────────────┬─────────────┐
+        ▼             ▼             ▼
+ Vision Worker   Repair Worker   Pricing Worker
+        │             │             │
+        ▼             ▼             ▼
+ OCR Tool      Repair Tool    Pricing Tool
+        │             │             │
+        └─────────────┴─────────────┘
+                      │
+                      ▼
+          Market Intelligence Agent
+                      │
+                      ▼
+      Investment Recommendation Agent
+                      │
+                      ▼
+              Evaluator Agent
+                      │
+      Validate Business Opportunity
+                      │
+                      ▼
+         Memory + Observability Logs
+                      │
+                      ▼
+              Gradio Dashboard UI
 ```
+
 ---
 
 # 🤖 Multi-Agent Architecture
