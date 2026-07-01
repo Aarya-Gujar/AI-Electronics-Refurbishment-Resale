@@ -12,6 +12,8 @@ The platform assists electronics refurbishers, repair centers, and resale busine
 
 Instead of relying on manual inspection and market research, users receive an AI-driven business assessment in seconds.
 
+<img width="1920" height="981" alt="image" src="https://github.com/user-attachments/assets/1b898826-73d4-482c-bede-4926e4a62e50" />
+
 ---
 
 # 🎯 Problem Statement
@@ -71,47 +73,8 @@ The system then:
 
 # 🏗 System Architecture
 
-```
-                        User
-                          │
-        Upload Image + Description
-                          │
-                          ▼
-                 Security Agent
-                          │
-          Validate & Sanitize Request
-                          │
-                          ▼
-                 Planner Agent
-                          │
-       Creates Execution Workflow Plan
-                          │
-        ┌─────────────┬─────────────┬─────────────┐
-        ▼             ▼             ▼
- Vision Worker   Repair Worker   Pricing Worker
-        │             │             │
-        ▼             ▼             ▼
- OCR Tool      Repair Tool    Pricing Tool
-        │             │             │
-        └─────────────┴─────────────┘
-                      │
-                      ▼
-          Market Intelligence Agent
-                      │
-                      ▼
-      Investment Recommendation Agent
-                      │
-                      ▼
-              Evaluator Agent
-                      │
-      Validate Business Opportunity
-                      │
-                      ▼
-         Memory + Observability Logs
-                      │
-                      ▼
-              Gradio Dashboard UI
-```
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/21051e69-0474-4b8c-ae8a-1ea56b758623" />
+
 
 ---
 
